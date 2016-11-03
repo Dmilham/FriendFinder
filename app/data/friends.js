@@ -1,7 +1,23 @@
-var globalArray = [
+ //      ___           ___                       ___           ___                         ___     
+ //     /\__\         /\  \                     /\__\         /\  \         _____         /\__\    
+ //    /:/ _/_       /::\  \       ___         /:/ _/_        \:\  \       /::\  \       /:/ _/_   
+ //   /:/ /\__\     /:/\:\__\     /\__\       /:/ /\__\        \:\  \     /:/\:\  \     /:/ /\  \  
+ //  /:/ /:/  /    /:/ /:/  /    /:/__/      /:/ /:/ _/_   _____\:\  \   /:/  \:\__\   /:/ /::\  \ 
+ // /:/_/:/  /    /:/_/:/__/___ /::\  \     /:/_/:/ /\__\ /::::::::\__\ /:/__/ \:|__| /:/_/:/\:\__\
+ // \:\/:/  /     \:\/:::::/  / \/\:\  \__  \:\/:/ /:/  / \:\~~\~~\/__/ \:\  \ /:/  / \:\/:/ /:/  /
+ //  \::/__/       \::/~~/~~~~   ~~\:\/\__\  \::/_/:/  /   \:\  \        \:\  /:/  /   \::/ /:/  / 
+ //   \:\  \        \:\~~\          \::/  /   \:\/:/  /     \:\  \        \:\/:/  /     \/_/:/  /  
+ //    \:\__\        \:\__\         /:/  /     \::/  /       \:\__\        \::/  /        /:/  /   
+ //     \/__/         \/__/         \/__/       \/__/         \/__/         \/__/         \/__/    
+
+
+
+
+var friendsArray = [
 
 {
 	  "name":"Danny",
+	  "pin":001,
 	  "photo":"https://picture of this person.jpg",
 	  "scores":[
 	     5,
@@ -15,9 +31,10 @@ var globalArray = [
 	     4,
 	     1
 	   ]
-	}
+},
 {
 	  "name":"Jack",
+	  "pin":002,
 	  "photo":"https://picture of this person.jpg",
 	  "scores":[
 	     5,
@@ -31,9 +48,10 @@ var globalArray = [
 	     4,
 	     1
 	   ]
-	}
+},
 {
 	  "name":"Cindy",
+	  "pin":003,
 	  "photo":"https://picture of this person.jpg",
 	  "scores":[
 	     5,
@@ -47,10 +65,10 @@ var globalArray = [
 	     4,
 	     1
 	   ]
-	}
-
+},
 {
 	  "name":"Jen",
+	  "pin":004,
 	  "photo":"https://picture of this person.jpg",
 	  "scores":[
 	     5,
@@ -64,9 +82,10 @@ var globalArray = [
 	     4,
 	     1
 	   ]
-	}
+},
 {
-	  "name":"James",
+	  "name":"Amy",
+	  "pin":005,
 	  "photo":"https://picture of this person.jpg",
 	  "scores":[
 	     5,
@@ -80,6 +99,7 @@ var globalArray = [
 	     4,
 	     1
 	   ]
-	}]
+}
+]
 
-	module.exports = globalArray;
+	module.exports = friendsArray;

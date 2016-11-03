@@ -1,3 +1,9 @@
+<!-- | | | | ___  _ __ ___   ___  | |__ | |_ _ __ ___ | |
+     | |_| |/ _ \| '_ ` _ \ / _ \ | '_ \| __| '_ ` _ \| |
+     |  _  | (_) | | | | | |  __/_| | | | |_| | | | | | |
+     |_| |_|\___/|_| |_| |_|\___(_)_| |_|\__|_| |_| |_|_|
+                                                     -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,25 +12,23 @@
         width: 450px;
     }
 </style>
-<title>AFF | Home </title>
+<title> Home </title>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
 
-	<script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<!-- 	<script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
 
-	<script type="text/javascript" src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
-<!-- <style type="text/css">
-	body {
-		padding-top: 70px;
-	}
-</style> -->
 <body>
  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -33,20 +37,17 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#">Welcome to Friend Finder</a>
+                <button class="navbar-brand page-scroll">Welcome to Friend Finder</button>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- Navigation Bar -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#">Sign Up</a>
+                        <button id="view" class="page-scroll"> View Friends </button>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">View Friends</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#">Find Friends</a>
+                        <button id="survey" class="page-scroll"> Survey </button>
                     </li>
                 </ul>
             </div>
@@ -62,7 +63,8 @@
                     <hr />
                 </div>
             </div> 
-
+            <!-- Registration Box -->
+            <div id="regBox">
             <div class="main-login main-center">
                 <form class="form-horizontal" method="post" action="#">
 
@@ -77,7 +79,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="email" class="cols-sm-2 control-label">Your Email Address</label>
+                        <label for="email" class="cols-sm-2 control-label">Email Address</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
@@ -103,16 +105,61 @@
                                 </div>
                             </div>
                         </div>
+                    </form> 
+                </div>
+<!-- Register-->                        
 <div class="form-group ">
     <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 </div>
+<!-- Login if already a member -->
         <div class="login-register">
         <span>Already a member? </span>
-          <a href="index.php">Login</a>
+          <a href="/">Login</a>
        </div>
      </form>
     </div>
   </div>
 </div>
 </body>
+
+
+<!--jQuery with Javascript for server requests for this page -->
+<script type="text/javascript">
+   
+
+    $('#view').click(viewFriends);
+
+
+
+function viewFriends(){
+
+    var currentURL = window.location.orirgin;
+
+    $.ajax({url: currentURL + "/api/friends", method:"GET"})
+
+        .done(function(friendsData){
+            console.log("-----------------------------------");
+            console.log("URL: " + currentURL + "/api/friends");
+            console.log("-----------------------------------");
+            console.log(friendsData[i]);
+            console.log("-----------------------------------");
+
+            for (var i=0; i<friendsData.length; i++){
+
+                console.log(friendsData);
+
+                var friendsDisplay = $("#regBox");
+                friendsDisplay.addClass ('disp');
+                friendsDisplay.attr('id', 'regBoxdisp-' + i + 1);
+                $("#friendsDisplay").append(friendsData)
+        
+            }
+        });
+    }
+
+
+
+
+</script>
+
 </html>
