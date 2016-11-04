@@ -19,14 +19,15 @@ var path = require ('path');
 
 module.exports = function(app){
 	// A Url ending in / will get routed to home.html
-app.use('/', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../public/home.html'));
-});
 
 	// A Url ending in /survey will get routed to survey.html
 app.get('/survey', function (req, res) {
 	res.sendFile(path.join(__dirname + '/../public/survey.html'));
 });	
+
+app.use(function (req, res) {
+	res.sendFile(path.join(__dirname + '/../public/home.html'));
+});
 }
 
 

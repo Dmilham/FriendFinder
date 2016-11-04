@@ -15,6 +15,7 @@ var express = require("express");
 var bodyParser = require('body-parser');
 var path = require('path');
 var app = express();
+var friends = require("./app/data/friends.js")
 var PORT = process.env.PORT || 3000;
 
 //=BodyParser Middleware==================================================
@@ -27,6 +28,14 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 require('./app/routing/html-routes.js')(app);
 require('./app/routing/api-routes.js')(app);
 
+
+app.get("/will",function(req,res){
+	console.log("will")
+	res.json(friends)
+
+})
+
+
 //=LISTENER==============================================================
 app.listen(PORT, function (){
 	console.log('=====================================');
@@ -37,7 +46,3 @@ app.listen(PORT, function (){
 	console.log('=====================================');
 
 });
-
-
-
-

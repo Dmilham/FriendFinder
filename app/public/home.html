@@ -10,8 +10,7 @@
 <style type="text/css">
     form{
         width: 450px;
-    }
-</style>
+    }</style>
 <title> Home </title>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +43,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <button id="view" class="page-scroll"> View Friends </button>
+                        <a target="_blank" href="/api/friends" > <button id="view" class="page-scroll"> View Friends </button> </a>
                     </li>
                     <li>
                         <button id="survey" class="page-scroll"> Survey </button>
@@ -67,7 +66,6 @@
             <div id="regBox">
             <div class="main-login main-center">
                 <form class="form-horizontal" method="post" action="#">
-
                     <div class="form-group">
                         <label for="name" class="cols-sm-2 control-label">Name</label>
                         <div class="cols-sm-10">
@@ -127,35 +125,35 @@
 <script type="text/javascript">
    
 
-    $('#view').click(viewFriends);
+//     $('#view').click(viewFriends);
 
 
 
-function viewFriends(){
+// function viewFriends(){
 
-    var currentURL = window.location.orirgin;
+//     var currentURL = window.location.orirgin;
 
-    $.ajax({url: currentURL + "/api/friends", method:"GET"})
+//     $.ajax({url: currentURL + "/api/friends", method:"GET"})
 
-        .done(function(friendsData){
-            console.log("-----------------------------------");
-            console.log("URL: " + currentURL + "/api/friends");
-            console.log("-----------------------------------");
-            console.log(friendsData[i]);
-            console.log("-----------------------------------");
+//         .done(function(friendsData){
+//             console.log("-----------------------------------");
+//             console.log("URL: " + currentURL + "/api/friends");
+//             console.log("-----------------------------------");
+//             console.log(friendsData[i]);
+//             console.log("-----------------------------------");
 
-            for (var i=0; i<friendsData.length; i++){
+//             for (var i=0; i<friendsData.length; i++){
 
-                console.log(friendsData);
+//                 console.log(friendsData);
 
-                var friendsDisplay = $("#regBox");
-                friendsDisplay.addClass ('disp');
-                friendsDisplay.attr('id', 'regBoxdisp-' + i + 1);
-                $("#friendsDisplay").append(friendsData)
+//                 var friendsDisplay = $("#regBox");
+//                 friendsDisplay.addClass ('disp');
+//                 friendsDisplay.attr('id', 'regBoxdisp-' + i + 1);
+//                 $("#friendsDisplay").append(friendsData)
         
-            }
-        });
-    }
+//             }
+//         });
+//     }
 
 
 
